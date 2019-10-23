@@ -22,7 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0x21FF
 #define PRODUCT_ID      0xAA97
-#define DEVICE_VER      0x0001
 #define MANUFACTURER    westfoxtrot
 #define PRODUCT         cypher
 #define DESCRIPTION     Cypher
@@ -41,14 +40,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
 */
-#define MATRIX_ROW_PINS { B0, B1, B2, B3, B4, F6, B6, B7, C6, C7 }
-#define MATRIX_COL_PINS { D0, D1, D2, D3, D4, D5, D6, D7, E6, F0 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL, or CUSTOM_MATRIX */
 #define DIODE_DIRECTION COL2ROW
 
-#define BACKLIGHT_PIN B5
 #define BACKLIGHT_BREATHING
 #define BACKLIGHT_LEVELS 5
 
@@ -64,3 +60,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * This is userful for the Windows task manager shortcut (ctrl+shift+esc).
  */
 #define GRAVE_ESC_CTRL_OVERRIDE
+
+#define DEVICE_VER      0x0002
+
+#define MATRIX_ROW_PINS { B0, F1, F5, F6, F7, D1, F4, D4, C6, C7 }
+#define MATRIX_COL_PINS { D6, D7, B4, B5, B6, B7, B3, B2, B1, F0 }
+
+
+#define BACKLIGHT_PIN D0
+
+#define RGB_DI_PIN E6
+#ifdef RGB_DI_PIN
+   #define RGBLED_NUM 10
+   #define RGBLIGHT_HUE_STEP 12
+   #define RGBLIGHT_SAT_STEP 25
+   #define RGBLIGHT_VAL_STEP 12
+   #define RGBLIGHT_LIMIT_VAL 255
+   #define RGBLIGHT_SLEEP
+   #define RGBLIGHT_ANIMATIONS
+#endif

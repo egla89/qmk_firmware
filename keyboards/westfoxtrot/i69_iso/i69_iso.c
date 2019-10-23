@@ -13,7 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "cypher.h"
+#include "i69_iso.h"
 
 void matrix_init_kb(void) {
 	// put your keyboard start-up code here
@@ -36,21 +36,29 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 	return process_record_user(keycode, record);
 }
 
+void keyboard_pre_init_kb(void) {
+
+    // Call the keyboard pre init code.
+    // Set our LED pins as output
+    setPinOutput(A13);
+    setPinOutput(A14);
+    writePinLow(A13);
+
+    keyboard_pre_init_user();
+}
+
 void led_set_kb(uint8_t usb_led) {
-    if (IS_LED_ON(usb_led, USB_LED_NUM_LOCK)) {
-        writePinHigh(F4);
-    } else {
-        writePinLow(F4);
-    }
+	// put your keyboard LED indicator (ex: Caps Lock LED) toggling code here
+
+
     if (IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)) {
-        writePinHigh(F1);
+
+        // Turn capslock on
+        writePinHigh(A14);
     } else {
-        writePinLow(F1);
+
+        // Turn capslock off
+        writePinLow(A14);
     }
-    if (IS_LED_ON(usb_led, USB_LED_SCROLL_LOCK)) {
-        writePinHigh(F5);
-    } else {
-        writePinLow(F5);
-    }
-    led_set_user(usb_led);
+	led_set_user(usb_led);
 }
