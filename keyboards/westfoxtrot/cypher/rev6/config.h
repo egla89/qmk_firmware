@@ -24,23 +24,45 @@
 /* COL2ROW, ROW2COL, or CUSTOM_MATRIX */
 #define DIODE_DIRECTION COL2ROW
 
-/* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCING_DELAY 5
+#define BACKLIGHT_PIN           A6
+#define BACKLIGHT_PWM_DRIVER    PWMD3
+#define BACKLIGHT_PWM_CHANNEL   1
+#define BACKLIGHT_PAL_MODE      1
+#define BACKLIGHT_LEVELS 6
+#define BACKLIGHT_BREATHING
+#define BREATHING_PERIOD 6
+
+/* define if matrix has ghost */
+//#define MATRIX_HAS_GHOST
+
+/* Set 0 if debouncing isn't needed */
+#define DEBOUNCE    5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
-#define BACKLIGHT_PIN A6
-
+#define RGBLIGHT_ANIMATIONS
 #define RGB_DI_PIN B15
-#ifdef RGB_DI_PIN
-   #define RGBLED_NUM 10
-   #define RGBLIGHT_HUE_STEP 12
-   #define RGBLIGHT_SAT_STEP 25
-   #define RGBLIGHT_VAL_STEP 12
-   #define RGBLIGHT_LIMIT_VAL 255
-   #define RGBLIGHT_SLEEP
-   #define RGBLIGHT_ANIMATIONS
-#endif
+#define RGBLED_NUM 20
+#define WS2812_SPI SPID2
+#define WS2812_SPI_MOSI_PAL_MODE 0
+
+/*
+ * Feature disable options
+ *  These options are also useful to firmware size reduction.
+ */
+
+/* disable debug print */
+//#define NO_DEBUG
+
+/* disable print */
+//#define NO_PRINT
+
+/* disable action features */
+//#define NO_ACTION_LAYER
+//#define NO_ACTION_TAPPING
+//#define NO_ACTION_ONESHOT
+//#define NO_ACTION_MACRO
+//#define NO_ACTION_FUNCTION
