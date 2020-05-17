@@ -21,8 +21,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0x21FF
+<<<<<<< HEAD
+#define PRODUCT_ID      0xAA97
+=======
 #define PRODUCT_ID      0xAA98
 #define DEVICE_VER      0x0002
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
 #define MANUFACTURER    westfoxtrot
 #define PRODUCT         cypher
 #define DESCRIPTION     Cypher
@@ -41,8 +45,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
 */
+<<<<<<< HEAD
+=======
 #define MATRIX_ROW_PINS { B0, F1, F5, F6, F7, D1, F4, D4, C6, C7 }
 #define MATRIX_COL_PINS { D6, D7, B4, B5, B6, B7, B3, B2, B1, F0 }
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL, or CUSTOM_MATRIX */
@@ -64,7 +71,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #define GRAVE_ESC_CTRL_OVERRIDE
 
+<<<<<<< HEAD
+#define DEVICE_VER      0x0002
 
+#define MATRIX_ROW_PINS { B0, F1, F5, F6, F7, D1, F4, D4, C6, C7 }
+#define MATRIX_COL_PINS { D6, D7, B4, B5, B6, B7, B3, B2, B1, F0 }
+=======
+
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
 
 
 #define BACKLIGHT_PIN D0

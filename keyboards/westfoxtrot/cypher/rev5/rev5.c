@@ -15,6 +15,46 @@
  */
 #include "rev5.h"
 
+<<<<<<< HEAD
+void matrix_init_kb(void) {
+	// put your keyboard start-up code here
+	// runs once when the firmware starts up
+
+	matrix_init_user();
+}
+
+void matrix_scan_kb(void) {
+	// put your looping keyboard code here
+	// runs every cycle (a lot)
+
+	matrix_scan_user();
+}
+
+bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
+	// put your per-action keyboard code here
+	// runs for every action, just before processing by the firmware
+
+	return process_record_user(keycode, record);
+}
+
+void led_set_kb(uint8_t usb_led) {
+    if (IS_LED_ON(usb_led, USB_LED_NUM_LOCK)) {
+        writePinHigh(D3);
+    } else {
+        writePinLow(D3);
+    }
+    if (IS_LED_ON(usb_led, USB_LED_CAPS_LOCK)) {
+        writePinHigh(D5);
+    } else {
+        writePinLow(D5);
+    }
+    if (IS_LED_ON(usb_led, USB_LED_SCROLL_LOCK)) {
+        writePinHigh(D2);
+    } else {
+        writePinLow(D2);
+    }
+    led_set_user(usb_led);
+=======
 bool led_update_kb(led_t led_state) {
     bool res = led_update_user(led_state);
     if(res) {
@@ -28,4 +68,5 @@ bool led_update_kb(led_t led_state) {
         writePin(D2, led_state.scroll_lock);
     }
     return res;
+>>>>>>> 142ebaea4650b81da143210438ec3828d81289e9
 }
